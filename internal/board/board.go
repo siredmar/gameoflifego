@@ -26,7 +26,7 @@ func (b *Boardtype) Create(x, y int) {
 	}
 }
 
-func (b *Boardtype) Randomize(seed int64, percentage float32) {
+func (b *Boardtype) Randomize(seed int64, percentage float64) {
 	r := rand.New(rand.NewSource(seed))
 	for y := range b.board {
 		for x := range b.board[y] {
