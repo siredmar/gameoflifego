@@ -19,16 +19,18 @@ func main() {
 	x = 80
 	y = 22
 	delayms = 200
-	seed = 126345
+	seed = 1234
 	percentage = 0.5
 
-	board = Board.Create(x, y)
-	board = Board.Randomize(board, seed, percentage)
-	Board.Print(board)
+	board := Board.Boardtype{}
+
+	board.Create(x, y)
+	board.Randomize(seed, percentage)
+	board.Print()
 
 	for {
-		board = Board.Step(board)
-		Board.Print(board)
+		board.Step()
+		board.Print()
 		time.Sleep(delayms * time.Millisecond)
 	}
 }
